@@ -4,6 +4,8 @@ import router from './router'
 import Vuex from 'vuex';
 import createPersistedState from 'vuex-persistedstate';
 
+import 'uikit';
+
 import "@/firebaseConfig.js"
 
 Vue.config.productionTip = false
@@ -19,24 +21,23 @@ const store = new Vuex.Store({
       state.user = payload.user;
     },
 
-    logout() {
-      this.state.user = {};
+    logout(state, router) {
+      state.user = {};
+      router.push("/login");
     }
   }
 })
 
-// router.beforeEach((to, from, next) => {
-//   const requiresAuth = to.matched.some(x => x.meta.requiresAuth);
-//   const currentUser = store.state.user;
+router.beforeEach((to, from, next) => {
+  const requiresAuth = to.matched.some(x => x.meta.requiresAuth);
+  const currentUser = store.state.user;
 
-//   if (requiresAuth && !currentUser.email) {
-//     next('/login')
-//   } else if (requiresAuth && currentUser) {
-//     next()
-//   } else {
-//     next()
-//   }
-// })
+  if (requiresAuth && !currentUser.email) {
+    next('/login')
+  } else {
+    next()
+  }
+})
 
 new Vue({
   router,

@@ -1,6 +1,6 @@
 <template>
   <div>
-    hello there
+    <button @click="$store.commit('logout', $router)" class="uk-button uk-button-danger">Logout</button>
   </div>
 </template>
 
