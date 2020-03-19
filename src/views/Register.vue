@@ -44,22 +44,26 @@
 </template>
 
 <script>
+import firebase from 'firebase';
+
 export default {
   data() {
     return {
       email: '',
       password: '',
       passwordConfirm: '',
+      loading: false,
     }
+  },
+
+  mounted() {
+    window.firebase = firebase;
   },
 
   methods: {
     validEmail() {
       let parts = this.email.split('@');
-      if (parts[0].length > 0 && parts[1].length > 0) {
-        return true;
-      }
-      return false;
+      return (parts[0].length > 0 && parts[1].length > 0);
     },
 
     passwordsMatch() {

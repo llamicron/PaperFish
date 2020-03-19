@@ -14,10 +14,10 @@
             </ul>
           </div>
 
-          <div class="uk-navbar-right">
+          <div v-if="user" class="uk-navbar-right">
             <ul class="uk-navbar-nav">
               <li>
-                <a href="#">{{ $store.state.user.email }}</a>
+                <a href="#">{{ user.email }}</a>
                 <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
                         <li @click="logout()">
@@ -42,8 +42,22 @@
 
 <script>
 import UIkit from "uikit";
+import firebase from 'firebase';
 
 export default {
+  data() {
+    return {
+      user: {}
+    }
+  },
+
+  mounted() {
+    firebase.auth().onAuthStateChanged((user) => {
+      this.user = user;
+    })
+    window.firebase = firebase;
+  },
+
   methods: {
     notify(message, status = "primary") {
       UIkit.notification({
@@ -56,7 +70,8 @@ export default {
 
     logout() {
       this.notify('Logged out');
-      this.$store.commit('logout', this.$router);
+      this.user = {};
+      firebase.auth().signOut();
     },
 
     showNavbar() {

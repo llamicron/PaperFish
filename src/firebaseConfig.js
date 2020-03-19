@@ -24,11 +24,4 @@ const settings = {}
 db.settings(settings)
 
 // firebase collections
-const usersCollection = db.collection('users')
-
-export {
-  db,
-  auth,
-  currentUser,
-  usersCollection,
-}
+// const usersCollection = db.collection('users')

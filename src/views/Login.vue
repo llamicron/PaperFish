@@ -44,7 +44,7 @@
 </style>
 
 <script>
-import { auth } from "@/firebaseConfig.js";
+import firebase from 'firebase';
 import UIkit from 'uikit';
 
 export default {
@@ -56,20 +56,19 @@ export default {
     }
   },
   mounted() {
-    if (this.$store.state.user.email != '') {
-      this.$router.push("/home");
-    }
+
     window.router = this.$router;
+    window.firebase = firebase;
   },
 
   methods: {
     login() {
       this.loading = true;
 
-      auth
+      firebase.auth()
         .signInWithEmailAndPassword(this.email, this.password)
         .then(user => {
-          this.$store.commit("setCurrentUser", user);
+          console.log("logged in");
           this.$parent.notify('Logged in', 'success');
           this.$router.push("/home");
         })
