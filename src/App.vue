@@ -8,7 +8,7 @@
             <ul class="uk-navbar-nav">
 
               <li class="uk-active">
-                <a href="#">Home</a>
+                <a href="/home">Home</a>
               </li>
 
             </ul>
@@ -20,7 +20,7 @@
                 <a href="#">{{ $store.state.user.email }}</a>
                 <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
-                        <li>
+                        <li @click="logout()">
                           <a href="#">logout</a>
                         </li>
                     </ul>
@@ -52,6 +52,11 @@ export default {
         pos: "bottom-left",
         timeout: 4000
       });
+    },
+
+    logout() {
+      this.notify('Logged out');
+      this.$store.commit('logout', this.$router);
     },
 
     showNavbar() {

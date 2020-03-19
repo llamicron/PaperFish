@@ -4,7 +4,7 @@ import store from '@/main.js';
 
 import Home from '@/views/Home'
 import Login from '@/views/Login'
-import SignUp from '@/views/SignUp'
+import Register from '@/views/Register';
 import PageNotFound from '@/views/PageNotFound';
 
 Vue.use(Router)
@@ -21,8 +21,8 @@ let router = new Router({
       component: Login
     },
     {
-      path: '/signup',
-      component: SignUp
+      path: '/register',
+      component: Register,
     },
     {
       path: '/home',

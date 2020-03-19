@@ -8,12 +8,13 @@
         <div class="uk-margin">
           <input type="text" v-model="email" class="uk-input" placeholder="Email" />
         </div>
+
         <div class="uk-margin">
           <input type="password" v-model="password" class="uk-input" placeholder="Password" />
         </div>
 
         <div class="uk-margin">
-          <a href="#">Register</a>
+          <a href="/register">Register</a>
         </div>
         <div class="uk-margin">
           <a href="#">Reset your password</a>

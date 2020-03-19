@@ -4,7 +4,10 @@ import router from './router'
 import Vuex from 'vuex';
 import createPersistedState from 'vuex-persistedstate';
 
-import 'uikit';
+import UIkit from 'uikit';
+import Icons from 'uikit/dist/js/uikit-icons';
+
+UIkit.use(Icons);
 
 import "@/firebaseConfig.js"
 
