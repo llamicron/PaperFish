@@ -5,6 +5,7 @@ import store from '@/main.js';
 import Home from '@/views/Home'
 import Login from '@/views/Login'
 import SignUp from '@/views/SignUp'
+import PageNotFound from '@/views/PageNotFound';
 
 Vue.use(Router)
 
@@ -13,7 +14,7 @@ let router = new Router({
   routes: [
     {
       path: '/',
-      redirect: '/login'
+      redirect: '/home'
     },
     {
       path: '/login',
@@ -29,6 +30,11 @@ let router = new Router({
       meta: {
         requiresAuth: true
       }
+    },
+    // Leave this route at the end
+    {
+      path: '*',
+      component: PageNotFound,
     }
   ]
 })

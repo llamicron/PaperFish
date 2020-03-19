@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div v-if="$router.currentRoute.path != '/login'" id="navbar" class="uk-position-relative">
+    <div v-if="showNavbar()" id="navbar" class="uk-position-relative">
       <img src="images/light.jpg" alt />
       <div class="uk-position-top">
         <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
@@ -52,6 +52,16 @@ export default {
         pos: "bottom-left",
         timeout: 4000
       });
+    },
+
+    showNavbar() {
+      let show_on_these = [
+        '/home',
+      ]
+      if (show_on_these.indexOf(this.$router.currentRoute.path) != -1) {
+        return true;
+      }
+      return false;
     }
   }
 };
