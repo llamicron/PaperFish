@@ -1,5 +1,6 @@
 <template>
   <div>
+    <button class="uk-button uk-button-primary">Hello</button>
     <pre>{{ user }}</pre>
   </div>
 </template>

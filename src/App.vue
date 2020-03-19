@@ -17,7 +17,8 @@
           <div v-if="user" class="uk-navbar-right">
             <ul class="uk-navbar-nav">
               <li>
-                <a href="#">{{ user.displayName }}</a>
+                <a v-if="user.displayName" href="#">{{ user.displayName }}</a>
+                <a v-else href="#">{{ user.email }}</a>
                 <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
                         <li @click="logout()">
@@ -55,6 +56,7 @@ export default {
     firebase.auth().onAuthStateChanged((user) => {
       this.user = user;
     })
+    window.app = this;
     window.firebase = firebase;
   },
 

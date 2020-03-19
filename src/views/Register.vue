@@ -1,5 +1,5 @@
 <template>
-  <div id="fullContainer">
+  <div id="fullContainer" class="uk-background-primary">
     <div id="loginCard" class="uk-position-center">
       <div class="uk-card uk-card-default uk-card-body">
 
@@ -127,7 +127,6 @@ export default {
   #fullContainer {
     height: 100vh;
     width: 100vw;
-    background-color: #208df1;
   }
 
   #loginCard {
