@@ -103,7 +103,7 @@ export default {
           firebase.auth().currentUser.sendEmailVerification();
           this.setDisplayName();
           this.$parent.notify("Account created. Please verify your email.", 'success');
-          this.$router.push('/home');
+          this.$router.push('/');
         })
         .catch((error) => {
         let errorCode = error.code;

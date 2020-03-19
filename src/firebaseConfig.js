@@ -1,16 +1,7 @@
 import firebase from 'firebase'
 import 'firebase/firestore'
-
-var firebaseConfig = {
-  apiKey: "AIzaSyB4CO_c9s_Brg2v7Ux67D0Du_sRqlsfNsI",
-  authDomain: "paperfish-29e4f.firebaseapp.com",
-  databaseURL: "https://paperfish-29e4f.firebaseio.com",
-  projectId: "paperfish-29e4f",
-  storageBucket: "paperfish-29e4f.appspot.com",
-  // messagingSenderId: "sender-id",
-  appId: "1:669187489603:web:bf46e38fad63a8966a39f6",
-  // measurementId: "G-measurement-id",
-};
+// Put firebase config object in src/secrets.js
+import firebaseConfig from '@/secrets.js';
 
 firebase.initializeApp(firebaseConfig)
 

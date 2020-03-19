@@ -1,3 +1,6 @@
+# Secret stuff
+src/secrets.js
+
 .DS_Store
 node_modules
 /dist

@@ -70,7 +70,7 @@ export default {
         .then(user => {
           console.log("logged in");
           this.$parent.notify('Logged in', 'success');
-          this.$router.push("/home");
+          this.$router.push("/");
         })
         .catch(err => {
           this.loading = false;

@@ -8,7 +8,7 @@
             <ul class="uk-navbar-nav">
 
               <li class="uk-active">
-                <a href="/home">Home</a>
+                <a href="/">Home</a>
               </li>
 
             </ul>
@@ -76,7 +76,7 @@ export default {
 
     showNavbar() {
       let show_on_these = [
-        '/home',
+        '/',
       ]
       if (show_on_these.indexOf(this.$router.currentRoute.path) != -1) {
         return true;

@@ -14,7 +14,10 @@ let router = new Router({
   routes: [
     {
       path: '/',
-      redirect: '/home'
+      component: Home,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/login',
@@ -23,13 +26,6 @@ let router = new Router({
     {
       path: '/register',
       component: Register,
-    },
-    {
-      path: '/home',
-      component: Home,
-      meta: {
-        requiresAuth: true
-      }
     },
     // Leave this route at the end
     {
