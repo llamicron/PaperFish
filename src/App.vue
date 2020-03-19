@@ -17,7 +17,7 @@
           <div v-if="user" class="uk-navbar-right">
             <ul class="uk-navbar-nav">
               <li>
-                <a href="#">{{ user.email }}</a>
+                <a href="#">{{ user.displayName }}</a>
                 <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
                         <li @click="logout()">
